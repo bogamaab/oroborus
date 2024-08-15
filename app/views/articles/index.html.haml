@@ -1,3 +1,7 @@
-%div
-  %h1.font-bold.text-4xl Articles#index
-  %p Find me in app/views/articles/index.html.erb
+%h1 Articles
+
+%ul
+  - @articles.each do |article|
+    %li
+      = article.title
+      = article.body
