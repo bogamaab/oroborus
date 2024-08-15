@@ -9,25 +9,7 @@
     = link_to 'Destroy', article_path(@article), data: { turbo_method: :delete, turbo_confirm: 'Are you sure?'}
 
 %h2 Comments
-- @article.comments.each do |comment|
-  %p
-    %strong= "Commenter:"
-    = comment.commenter
-
-  %p
-    %strong= "Comment:"
-    = comment.body
+= render @article.comments
 
 %h2 Add a comment:
-= form_with model: [ @article, @article.comments.build ] do |form|
-  %p
-    = form.label :commenter
-    %br
-    = form.text_field :commenter
-  %p
-    = form.label :body
-    %br
-    = form.text_area :body
-
-  %p
-    = form.submit
+= render 'comments/form', article: @article
