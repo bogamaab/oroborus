@@ -1,7 +1,8 @@
-%p
-  %strong= "Commenter:"
-  = comment.commenter
+- unless comment.archived?
+  %p
+    %strong= "Commenter:"
+    = comment.commenter
 
-%p
-  %strong= "Comment:"
-  = comment.body
+  %p
+    %strong= "Comment:"
+    = comment.body
