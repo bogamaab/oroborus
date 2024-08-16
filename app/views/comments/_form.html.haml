@@ -1,3 +1,4 @@
+-# unless current_user.eql? article.user
 = form_with model: [ article, article.comments.build ] do |form|
   %p
     = form.label :commenter
