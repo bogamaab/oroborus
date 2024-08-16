@@ -38,5 +38,10 @@ module Blog
 
     # Don't generate system test files.
     config.generators.system_tests = nil
+
+    # Changing engine used to generate views, from erb to haml
+    config.generators do |g|
+      g.template_engine :haml
+    end
   end
 end
